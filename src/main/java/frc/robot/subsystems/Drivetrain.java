@@ -6,7 +6,6 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.util.sendable.SendableRegistry;
 import edu.wpi.first.wpilibj.BuiltInAccelerometer;
-import edu.wpi.first.wpilibj.DataLogManager;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.Spark;
@@ -150,8 +149,11 @@ public class Drivetrain extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
     SmartDashboard.putNumber("Gyro Angle", getGyroAngleZ());
-
-    // DataLogManager.log("Gyro Angle: " + getGyroAngleZ());
+    SmartDashboard.putNumber("Left Distance", getLeftDistanceInch());
+    SmartDashboard.putNumber("Right Distance", getRightDistanceInch());
+    SmartDashboard.putNumber("Average Distance", getAverageDistanceInch());
+    SmartDashboard.putNumber("Left Encoder Count", getLeftEncoderCount());
+    SmartDashboard.putNumber("Right Encoder Count", getRightEncoderCount());
 
   }
 
